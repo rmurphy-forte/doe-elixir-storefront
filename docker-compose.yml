@@ -10,3 +10,5 @@ services:
       - storedb
   storedb:
     image: postgres:13.4
+    environment:
+      - POSTGRES_PASSWORD=postgres
