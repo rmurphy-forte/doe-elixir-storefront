@@ -7,6 +7,12 @@
 # General application configuration
 import Config
 
+config :store, Store.Repo,
+  database: "store_repo",
+  username: "user",
+  password: "pass",
+  hostname: "localhost"
+
 config :store,
   ecto_repos: [Store.Repo]
 

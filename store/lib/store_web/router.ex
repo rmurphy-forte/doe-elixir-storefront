@@ -19,6 +19,7 @@ defmodule StoreWeb.Router do
 
     get "/", PageController, :index
     get "/store", StoreController, :index
+    get "/store/new", StoreController, :new
   end
 
   # Other scopes may use custom stacks.

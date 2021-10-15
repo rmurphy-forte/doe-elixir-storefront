@@ -1,4 +1,4 @@
-<table>
+<table id="items">
 	<thead>
 		<tr>
 			<th>Item Name</th>
@@ -7,15 +7,17 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>Grand Wizard's Staff</td>
-			<td>$3,000.00</td>
-			<td><a href="#">Buy</a></td>
-		</tr>
+		<%= for item <- @items do %>
+			<tr data-name={item.item_name}>
+				<td><%= item.item_name %></td>
+				<td><%= :erlang.float_to_binary(item.price, [decimals: 2]) %></td>
+				<td><a href="#" onclick="return false;" data-name={item.item_name}>Buy Item</a></td>
+			</tr>
+	    <% end %>
 	</tbody>
 </table>
 <hr />
-<table>
+<table id="add">
 	<tr>
 		<td>Item Name</td>
 		<td><input type="text" name="item" /></td>
